@@ -1,0 +1,31 @@
+
+// int length(Node * head){
+//     int count =0;
+//     Node temp=head;
+//     while(!temp->next=NULL){
+//         temp=temp->temp;
+//         count++;
+//     }
+//     return count;
+    
+// }
+// int getMiddle(Node *head)
+// {
+//    // Your code here
+//    int len=length(head);
+//    return len-1/2;
+// }
+//This is normal approach
+
+//Using another appraoch
+Node*  midpoint_LL(Node * head){
+    if(head==NULL || head->next==NULL)
+    return head;
+    Node *slow=head;
+    Node *fast=head->next;
+    while(head!=NULL && head->next!=NULL){
+        slow=slow->next;
+        fast=fast->next->next;
+    }
+    return slow;
+}
