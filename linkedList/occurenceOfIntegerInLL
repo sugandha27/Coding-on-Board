@@ -1,0 +1,17 @@
+int count(struct node* head, int search_for)
+{
+//add your code here
+int n=0;
+node* temp =head;
+if(temp->data==search_for)
+    n++;
+while(temp->next!=NULL){
+    
+    temp=temp->next;
+    if(temp->data==search_for){
+        n++;
+    }
+   
+}
+ return n;
+}
