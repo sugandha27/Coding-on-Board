@@ -1,0 +1,63 @@
+Node * reverse(Node * head){
+    if(head==NULL || head->next==NULL){
+        return head;
+    }
+    Node* smallans=reverse(head->next);
+    head->next->next=head;
+    head->next=NULL;
+    return smallans;
+}
+bool isPalindrome(Node *head)
+{
+    Node *j;
+    Node *i=head;
+    Node *temp=head;
+    while(temp!=NULL && temp->next!=NULL){
+        i=i->next;
+        temp=temp->next;
+    }
+    j=i;
+    Node *smallhead=reverse(i);
+    while(temp!=NULL && smallhead!=NULL){
+        if(temp->data==smallhead->data){
+            temp=temp->next;
+            smallhead=smallhead->next;
+        }
+        else
+        return false;
+    }
+    return true;
+    
+    //Your code here
+Node * reverse(Node * head){
+    if(head==NULL || head->next==NULL){
+        return head;
+    }
+    Node* smallans=reverse(head->next);
+    head->next->next=head;
+    head->next=NULL;
+    return smallans;
+}
+bool isPalindrome(Node *head)
+{
+    Node *j;
+    Node *i=head;
+    Node *temp=head;
+    while(temp!=NULL && temp->next!=NULL){
+        i=i->next;
+        temp=temp->next;
+    }
+    j=i;
+    Node *smallhead=reverse(i);
+    while(temp!=NULL && smallhead!=NULL){
+        if(temp->data==smallhead->data){
+            temp=temp->next;
+            smallhead=smallhead->next;
+        }
+        else
+        return false;
+    }
+    return true;
+    
+    //Your code here
+}
