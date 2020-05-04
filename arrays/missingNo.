@@ -1,0 +1,9 @@
+// Given an array C of size N-1 and given that there are numbers from 1 to N with one element missing, the missing number is to be found.
+#include <iostream>
+using namespace std;
+
+int main() {
+	//code
+	
+	return 0;
+}
