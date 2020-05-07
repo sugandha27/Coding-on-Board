@@ -1,0 +1,32 @@
+node* skipMdeleteN(node* head, int M,int N){
+    if(M==0)
+    return NULL;
+    if(N==0)
+    return head;
+    node* curr=head;
+    node* temp=NULL;
+
+    while(curr!=NULL{
+        int take=0;
+        int skip=0;
+        while(curr!=NULL && take<M){
+            if(temp==NULL)
+            temp=curr;
+            else{
+                temp->next=curr;
+                temp=curr;
+
+            }
+            curr=curr->next;
+            take++;
+        }
+        while(curr!=NULL && skip<N){
+            node *newNode=curr;
+            delete(curr);
+            curr=newNode->next;
+            skip++;
+        }
+
+    }
+    return head;
+}

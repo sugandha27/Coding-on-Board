@@ -1,1 +1,38 @@
 //Arrange elements in a given Linked List such that, all even numbers are placed after odd numbers. Respective order of elements should remain same.
+node* arrange_LinkedList(node* head)
+{
+    //write your code here
+    node * oddH=NULL;
+    node * oddT=NULL;
+    node * evenH=NULL;
+    node * evenT=NULL;
+    node * temp=head;
+    while(temp!=NULL){
+    	if(temp->data%2!=0){
+            if(oddH==NULL){
+        		oddH=temp;
+        		oddT=oddH;
+            }
+            else{
+                oddT->next=temp;
+                oddT=oddT->next;
+            }
+    	}
+      else{
+          if(evenH==NULL){
+              evenH=temp;
+        		evenT=evenH;
+          }
+          else{
+              evenT->next=temp;
+              evenT=evenT->next;
+          }
+      }  
+        temp=temp->next;
+    }
+    if(oddH==NULL || evenH==NULL )
+        return head;
+	oddT->next=evenH;
+    evenT->next=NULL;
+    return oddH;
+}
